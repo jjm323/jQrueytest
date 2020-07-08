@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<style>
+		a{text-decoration:none;}
+	</style>
+</head>
+<body>
+	<div data-role="page" id="main">
+	<div data-role="header" data-position="fixed">
+		<a href="#gear"><button data-icon=gear data-iconpos="notext"></button></a>
+		<h1>배달의 만족</h1>
+		<a href="mailto:gjm3551@ync.ac.kr"><button data-icon=comment data-iconpos="notext"></button></a>
+	</div>
+
+	<div data-role="content">
+		<a href="https://www.baemin.com/">
+			<img src="a.jpg" height=200px; width=100%;>
+		</a>
+		<div class="ui-grid-d">
+			<div class="ui-block-a"><a href="#a"><img src="a.png" width="100%" height="100%"></a></div>
+			<div class="ui-block-b"><a href="#b"><img src="b.png" width="100%" height="100%"></a></div>
+			<div class="ui-block-c"><a href="#c"><img src="c.png" width="100%" height="100%"></a></div>
+			<div class="ui-block-d"><a href="#d"><img src="d.png" width="100%" height="100%"></a></div>
+			<div class="ui-block-e"><a href="#e"><img src="e.png" width="100%" height="100%"></a></div>
+		</div><br>
+		<div class="ui-bar ui-bar-b">이번주 추천메뉴</div><br>
+		<div class="ui-body ui-body-a">
+			<a href="http://www.codd.co.kr/site/" style="color:black"><h3>땅땅치킨 <---클릭</h3></a>
+			<p>땅땅 두다리 더 치킨 20,000원</p>
+			<p>골드크런치킹 20,900원</p>
+		</div>
+		<div class="ui-body ui-body-a">
+			<a href="http://www.codd.co.kr/site/" style="color:black"><h3>치킨과바람피자 <---클릭</h3></a>
+			<p>[배달3대천왕]치.피.떡 세트 25,800원</p>
+			<p>[갓성비]WoW말해뭐해세트 19,800원</p>
+			<p>[HOT인기]믿고먹는끝판왕세트 21,800원</p>
+		</div>
+
+		<ul data-role="listview" data-filter="true" data-filter-placeholder="먹고 싶은 메뉴검색(밑에 있는 메뉴만 검색)">
+			<li><a href="#b">치킨</a></li>
+			<li><a href="#d">짜장면</a></li>
+			<li><a href="#d">짬뽕</a></li>
+			<li><a href="#a">족발</a></li>
+		</ul><br>
+		<h3>| 주위 |</h3>
+				<h5>사이트가 안들어가지고 "403 Forbidden"이라고 뜰 경우 : 사이트를 나갔다가 다시 실행한다. 만약 이렇게 해서도 안되면 VPN차단으로 인한 오류입니다.</h5>
+		<h6>사업자정보확인 | 이용약관 | 전자금융거래 이용약관 | 개인정보 처리 방침 <br><br>705-703 대구광역시 남구 현충로 170 (대명동) 영남이공대학교  전화번호 : 053-650-9114  팩스번호 : 053-624-7871</h6>
+		<h6>제작자 : 1905095-조정민</h6>
+	</div>
+
+	<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+</div>
+<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="gear">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>환경설정</h1>
+		</div>
+		<div data-role="centent"><br>
+			<div class="ui-bar ui-bar-a">알림</div>
+			<div class="ui-body ui-body-a">
+			<h3>이벤트 혜택</h3>
+			<p>쿠폰 및 마케팅정보 알림</p>
+			<select name="yes" data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select><hr>
+			<h3>리뷰 쓰기</h3>
+			<p>리뷰 쓰기 알림 (22시~08시 미발송)</p>
+			<select name="yes" data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select><hr>
+			<h3>리뷰 댓글</h3>
+			<p>내 리뷰에 달린 댓글 알림 (22시~08시 미발송)</p>
+			<select name="yes" data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select><hr>
+			<h3>배달현황</h3>
+			<p>배민라이더스 배달상태 실시간 알림</p>
+			<select name="yes" data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select>
+			<div class="ui-bar ui-bar-a">기능</div>
+			<h3>가게번호 자동저장</h3>
+			<p>전화주문시 가게번호 주소록에 저장</p>
+			<select name="yes" data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select><hr>
+			<h3>여러 기기에서 로그인 허용</h3>
+			<p>여러 대의 휴대폰에서 동시에 로그인 하 수 있도록 허용</p>
+			<select name="yes" data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select>
+		</div>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="a">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>한식</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview">
+					<li><a href="https://store.naver.com/restaurants/detail?id=151816374"><img src="aa.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>조조칼국수 (한식)</h3>
+						<p>053-242-5343 대구 남구 현충로 15길 13-1</p>
+						<p>매일 11:00 ~ 22:30 연중무휴/브레이크 타임 없음</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=1614860888"><img src="ab.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>팔덕식당 (돼지고기구이)</h3>
+						<p>053-626-0888 대구 남구 큰골길 35</p>
+						<p>매일 11:30 ~ 22:00 브레이크 타임 14:30 ~ 17:30 / 1일 100인분 소진시 조기 마감 | 월요일 휴무</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=13433412"><img src="ac.jpg"><p class="ui-li-aside">사러가기</p>
+						<h3>지환이네왕족발 본점 (족발,보쌈)</h3>
+						<p>053-657-0705 대구 남구 대명복개로 96</p>
+						<p>평일 17:00 ~ 22:30 홀엽업 (본관,별관) | 매일 12:00 ~ 23:00 포장, 배달</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=1058488360"><img src="ad.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>잔잔바리 (백반,가정식)</h3>
+						<p>010-8077-5660 대구 남구 안지랑로 21</p>
+						<p>평일 11:30 ~ 21:00 라스트 오더 20:30 | 평일 15:30 ~ 17:00 브레이크 타임 / 주말 11:30 ~ 21:00 라스트 오더 20:30</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=37943470"><img src="ae.jpeg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>만보미장터순대국밥 안지랑점 (순대,순댓국)</h3>
+						<p>053-625-4133 대구 남구 두류공원로 23</p>
+						<p>매일 00:00 ~ 24:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=20816373"><img src="af.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>고령촌돼지찌개 (찌개,전골)</h3>
+						<p>053-626-0780 대구 남구 앞산순환로 440-1</p>
+						<p>매일 11:00 ~ 23:00 설,추석 당일 휴무</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=20754091"><img src="ag.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>홍림곱창 (곱창,막창,양)</h3>
+						<p>053-655-5903 대구 남구 대명로36길 58</p>
+						<p>매일 11:00 ~ 02: 00 상시 무휴!</p>
+					</a></li>
+				</ul>
+				<h3>| 주위 |</h3>
+				<h5>사이트가 안들어가지고 "403 Forbidden"이라고 뜰 경우 : 사이트를 나갔다가 다시 실행한다.</h5>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="b">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>치킨</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview">
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=1230449583&query=%EC%95%9E%EC%82%B0%EC%98%9B%EB%82%A0%ED%86%B5%EB%8B%AD"><img src="ba.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>앞산옛날통닭 (치킨,닭강정)</h3>
+						<p>053-621-1055 대구 남구 현충로 61</p>
+						<p>매일 17:00 ~ 02:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=11801933&query=%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EB%8C%80%EB%AA%851%ED%98%B8%EC%A0%90"><img src="bb.jpeg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>교촌치킨 대명1호점 (치킨,닭강정)</h3>
+						<p>053-629-9994 대구 남구 대명로 60-1</p>
+						<p>매일 12:00 ~ 00:00 연중무휴</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=35751362&query=%EC%B2%AD%EC%B6%98%EC%BC%84%ED%84%B0%ED%82%A4"><img src="bc.jpg"><p class="ui-li-aside">사러가기</p>
+						<h3>청춘켄터키 (치킨,닭강정)</h3>
+						<p>053-653-6637 대구 남구 앞산순환로 351-31</p>
+						<p>매일 16:00 ~ 02:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=12015219&query=%EA%B5%BD%EB%84%A4%EC%B9%98%ED%82%A8%20%EB%8C%80%EB%AA%851%ED%98%B8%EC%A0%90"><img src="bd.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>굽네치킨 대명1호점 (치킨,닭강정)</h3>
+						<p>0504-3143-8679 대구 남구 대명로20길 22-2</p>
+						<p>평일 12:00 ~ 24:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=1537384937&query=%EC%9E%90%EC%9D%B4%EC%96%B8%ED%8A%B8%ED%86%B5%EB%8B%AD"><img src="be.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>자이언트통닭 (치킨,닭강정)</h3>
+						<p>053-655-3399 대구 남구 대명로 159</p>
+						<p>매일 16:00 ~ 02:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=11802367&query=%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EC%95%9E%EC%82%B0%EC%A0%90"><img src="bf.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>교촌치킨 앞산점 (치킨,닭강정)</h3>
+						<p>053-657-9999 대구 남구 대명로 177</p>
+						<p>매일 12:00 ~ 24:00 연중무휴</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=37684246&query=%EB%A7%98%EC%8A%A4%ED%84%B0%EC%B9%98%20%EC%95%88%EC%A7%80%EB%9E%91%EC%97%AD%EC%A0%90"><img src="bg.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>맘스터치 안지랑역점 (치킨,닭강정)</h3>
+						<p>053-629-6200 대구 남구 대명로 144-1</p>
+						<p>매주 10:00 ~ 23:00</p>					
+					</a></li>
+				</ul>
+				<h3>| 주위 |</h3>
+				<h5>사이트가 안들어가지고 "403 Forbidden"이라고 뜰 경우 : 사이트를 나갔다가 다시 실행한다.</h5>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="c">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>피자</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview">
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=13571622&query=%EC%95%9E%EC%82%B0%EC%A3%BC%ED%83%9D"><img src="ca.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>앞산주택 (카페)</h3>
+						<p>053-621-3784 대구 남구 현충로1길 16</p>
+						<p>매일 11:00 ~ 22:00 명절 당일 휴무 | 월요일 휴무</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=31427828&query=%EC%86%8C%EA%B0%80%EB%8B%B4%20%EB%B3%B8%EC%A0%90"><img src="cb.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>소가담 본점 (양식)</h3>
+						<p>053-721-6112 대구 남구 현충로6길 27-1</p>
+						<p>매일 11:30 ~ 22:00 연중무휴</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=13571638&query=%ED%8C%8C%EC%8A%A4%ED%83%80%EB%AF%BC"><img src="cc.jpg"><p class="ui-li-aside">사러가기</p>
+						<h3>파스타민 (이탈리아음식)</h3>
+						<p>053-656-0385 대구 남구 대명남로 157</p>
+						<p>평일 15:30 ~ 16:00 브레이크타임 | 매일 11:0 ~ 22:00 퍼스트오더 11:00 라스트오더 21:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=13572192&query=GookSu"><img src="cd.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>GookSu (이탈리아음식)</h3>
+						<p>053-625-1365 대구 남구 현충로7길 2</p>
+						<p>평일 11:00 - 22:00Break time 15:00~17:00(주말ㆍ공휴일제외)(매주수요일휴무) | 주말 11:00 - 22:00Break time 15:00~17:00(주말ㆍ공휴일제외)(매주수요일휴무)</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=11784423&query=%ED%94%BC%EC%9E%90%EC%97%90%EB%95%85%20%EB%8C%80%EB%AA%85%EC%A0%90"><img src="ce.jpeg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>피자에땅 대명정 (피자)</h3>
+						<p>053-625-6560 대구 남구 큰골길 13</p>
+						<p>매일 11:00 ~ 23:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=20133987&query=%EB%82%98%EC%9D%B8%EB%A1%9C%EB%93%9C%ED%94%BC%EC%A0%9C%EB%A6%AC%EC%95%84%20%ED%94%BC%EC%A0%9C%EB%A6%AC%EC%95%84%20%EC%84%9C%EB%B6%80%EC%A0%90"><img src="cf.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>나인로드피제리아 피제리아 서부점</h3>
+						<p>053-624-8118 대구 달서구 구마로 248</p>
+						<p>평일 15:00 ~ 16:00 VREAK TIME | 매일 11:30 ~ 22:00 연중무휴</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=21226157&query=%ED%9B%84%EB%8B%88%ED%94%BC%EC%9E%90%20%EB%8C%80%EB%AA%85%EC%A0%90"><img src="cg.png">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>후니피자 대명점 (피자)</h3>
+						<p>053-653-8482 대구 남구 대명로 177</p>
+						<p>매일 11:00 ~ 01:00 연중무휴</p>					
+					</a></li>
+				</ul>
+				<h3>| 주위 |</h3>
+				<h5>사이트가 안들어가지고 "403 Forbidden"이라고 뜰 경우 : 사이트를 나갔다가 다시 실행한다.</h5>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+	
+
+	<div data-role="page" id="d">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>중국집</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview">
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=13571653&query=%EA%B0%80%EC%95%BC%EC%84%B1"><img src="da.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>가야성 (중식당)</h3>
+						<p>053-654-0545 대구 달서구 월배로83길 7</p>
+						<p>매일 11:00 ~ 21:00 휴무일 없음</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=527190723&query=%EB%A7%88%EB%9D%BC%EC%84%A0%EC%83%9D"><img src="db.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>마라선생 (중식당)</h3>
+						<p>053-215-7980 대구 남구 대명로36길 71-4</p>
+						<p>매일 00:00 ~ 22:00 주문마감 | 매일 00:00 ~ 23:00 매장마감</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=13205251&query=%ED%99%A9%EA%B6%81%EC%9F%81%EB%B0%98%EC%A7%9C%EC%9E%A5%EB%8C%80%EB%AA%85%EC%A0%90"><img src="dc.jpg"><p class="ui-li-aside">사러가기</p>
+						<h3>황궁쟁반짜장대명점 (중식당)</h3>
+						<p>053-626-4123 대구 남구 대명로 27-3</p>
+						<p>매일 10:00 ~ 20:30</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=20171943&query=%EB%8C%80%EB%8F%99%EB%B0%98%EC%A0%90"><img src="dd.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>대동반점 (중식당)</h3>
+						<p>053-656-5037 대구 남구 현충로19길 43</p>
+						<p>평일 11:30 ~ 20:00 | 일요일 휴무</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=1883957706&query=%EB%8C%80%EB%B3%B4%EC%84%B1"><img src="de.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>대보성 (중식당)</h3>
+						<p>053-655-9191 대구 남구 두류공원로5길 8</p>
+						<p>11:30 ~ 20:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=30968652&query=%EB%B8%94%EB%9E%99%EC%8A%A4%EC%99%84%EC%A7%AC%EB%BD%95%EC%B9%B4%ED%8E%98"><img src="df.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>블랙스완짬뽕카페 (중식당)</h3>
+						<p>053-621-1977 대구 남구 대명서로 21-2</p>
+						<p>매일 11:30 ~ 20:30 | 15:30 ~ 17:00 브레이크타임 | 월요일 휴무</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?entry=pll&id=37918615&query=%EB%AA%A9%EB%82%9C"><img src="dg.jpeg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>목난 (중식당)</h3>
+						<p>053-621-7744 대구 남구 대명남로 180-1</p>
+						<p>평일 12:00 ~ 21:00</p>					
+					</a></li>
+				</ul>
+				<h3>| 주위 |</h3>
+				<h5>사이트가 안들어가지고 "403 Forbidden"이라고 뜰 경우 : 사이트를 나갔다가 다시 실행한다.</h5>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="e">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>족발 | 보쌈</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview">
+					<li><a href="https://store.naver.com/restaurants/detail?id=13433412"><img src="ac.jpg"><p class="ui-li-aside">사러가기</p>
+						<h3>지환이네왕족발 본점 (족발,보쌈)</h3>
+						<p>053-657-0705 대구 남구 대명복개로 96</p>
+						<p>평일 17:00 ~ 22:30 홀엽업 (본관,별관) | 매일 12:00 ~ 23:00 포장, 배달</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=16318791"><img src="eb.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>대구남양왕족발보쌈 (족발,보쌈)</h3>
+						<p>050-7977-9892 대구 달서구 학산로 248-1</p>
+						<p>매일 11:00 ~ 01:00 연중무휴</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=1981978604"><img src="ec.jpg"><p class="ui-li-aside">사러가기</p>
+						<h3>싸다구 족발&보쌈 대명점 (족발,보쌈)</h3>
+						<p>053-628-5005 대구 남구 대명로36길 63</p>
+						<p>매일 11:00 ~ 02:00 연중무휴</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=77062853"><img src="ed.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>정통착한족발보쌈 본점 (족발,보쌈)</h3>
+						<p>050-4454-6628 대구 남구 장전1길 199-2</p>
+						<p>매일 16:00 ~ 03:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=35297347"><img src="ee.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>서울왕족발보쌈 (족발,보쌈)</h3>
+						<p>053-716-5867 대구 남구 대명남로 2</p>
+						<p></p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=1784830076"><img src="ef.png">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>모둠족발보쌈집 (족발,보쌈)</h3>
+						<p>050-8202-5031 대구 남구 대명로14길 22</p>
+						<p>매일 12:00 ~ 24:00</p>
+					</a></li>
+					<li><a href="https://store.naver.com/restaurants/detail?id=13201510"><img src="eg.jpg">
+						<p class="ui-li-aside">사러가기</p>
+						<h3>한양한방황족발보쌈 (족발,보쌈)</h3>
+						<p>053-622-8833 대구 남구 현충로42길 6</p>
+						<p>매일 12:00 ~ 02:00</p>					
+					</a></li>
+				</ul>
+				<h3>| 주위 |</h3>
+				<h5>사이트가 안들어가지고 "403 Forbidden"이라고 뜰 경우 : 사이트를 나갔다가 다시 실행한다.</h5>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+	</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="main1">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>뭐먹지</h1>
+		</div>
+		<div data-role="centent">
+			<h3>캠핑한끼 우둔살 스테이크^~^</h3>
+			<iframe width="100%" height="400" src="https://www.youtube.com/embed/KDiBu_yR4m0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h3>진라면 매운맛에 치킨마요덮밥 라면 먹방 김장김치 총각김치까지 리얼사운드^*&*^</h3>
+			<iframe width="100%" height="400" src="https://www.youtube.com/embed/DMdMvcFhDIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h3>쏘하부부 보양식 장어구이^0^</h3>
+			<iframe width="100%" height="400" src="https://www.youtube.com/embed/ppBOXnrHrBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+			<iframe width="100%" height="400" src="https://www.youtube.com/embed/XPeNvzueCf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h3>등갈비 먹방~</h3>
+			<iframe width="100%" height="400" src="https://www.youtube.com/embed/OZ6zkyK-dks" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+		</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+	
+	<div data-role="page" id="main2">
+		<div data-role="header" data-position="fixed">
+			<a href="#main">홈</a>
+			<h1>MY</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview" >
+				<li><a href="#mypage">조정민님 어서오세요.</a></li>
+				<li><a href="#notice">공지사항</a></li>
+				<li><a href="#safe">고객안심센터</a></li>
+				<li>현제 버전 10.6.0</li>
+			</ul>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+		</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="mypage">
+		<div data-role="header" data-position="fixed">
+			<a href="#main2">이전으로</a>
+			<h1>내 정보 수정</h1>
+			<a href="#main2">완료</a>
+		</div><br>
+		<div data-role="centent">
+			<h3>개인정보 수정</h3>
+			이름 : <input type="text" value="조정민">
+			이메일 : <input type="text" value="gjm3551@ync.ac.kr">
+			비밀번호 : <input type="password" placeholder="10-20자 이내">
+			비밀번호 확인 : <input type="password" placeholder="10-20자 이내">
+			휴대폰 인증 <p data-role="none" style="opacity:0.5" >주문정보의 연락처로 사용됩니다.</p>
+			<input type="text" value="010-1234-5678"><br><hr>
+			<h3>마케팅 정보 수신동의</h3>
+			<p style="opacity:0.5">이벤트 및 해텍에 대한 정보를 받으실 수 있어요.</p>
+			메일 수신동의<br>
+			<select data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select><br>
+			SMS 수신동의<br>
+			<select data-role="slider">
+				<option value="yes"></option>
+				<option value="no"></option>
+			</select>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+		</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="notice">
+		<div data-role="header" data-position="fixed">
+			<a href="#main2">이전으로</a>
+			<h1>공지사항</h1>
+		</div>
+		<div data-role="centent">
+			<ul data-role="listview">
+				<li>
+					<h3>SBI저축은행 시스템 점검 - 7월 4일 (토)</h3>
+					<p style="opacity:0.5">2020-07-03</p>
+				</li>
+				<li>
+					<h3>개인정보처리방침 일부 변경에 관한 안내</h3>
+					<p style="opacity:0.5">2020-06-30</p>
+				</li>
+				<li>
+					<h3>우리카드 비장의카드(배민우리체크) 발급 중단 안내(8월 1일 시행)</h3>
+					<p style="opacity:0.5">2020-06-29</p>
+				</li>
+				<li>
+					<h3>리뷰 관련 일부 정책 변경 안내</h3>
+					<p style="opacity:0.5">2020-06-26</p>
+				</li>
+				<li>
+					<h3>현대카드 시스템 점검 - 6월 28일 (일)</h3>
+					<p style="opacity:0.5">2020-06-26</p>
+				</li>
+				<li>
+					<h3>카카오뱅크 시스템 점검 - 6월 28일 (일)</h3>
+					<p style="opacity:0.5">2020-06-19</p>
+				</li>
+				<li>
+					<h3>SC 제일은행 시스템 점검 - 6월 20일 (토)</h3>
+					<p style="opacity:0.5">2020-06-19</p>
+				</li>
+				<li>
+					<h3>SK증권 시스템 점검 - 6월 20일 (토)</h3>
+					<p style="opacity:0.5">2020-06-19</p>
+				</li>
+				<li>
+					<h3>SC 제일은행 시스템 점검 - 6월 20일 (토)</h3>
+					<p style="opacity:0.5">2020-06-19</p>
+				</li>
+				<li>
+					<h3>개인정보처리방침 일부 변경에 관한 안내</h3>
+					<p style="opacity:0.5">2020-06-18</p>
+				</li>
+				<li>
+					<h3>[공지] 배달의민족 서비스 이용약관 일부 변경에 관한 안내</h3>
+					<p style="opacity:0.5">2020-06-10</p>
+				</li>				
+			</ul>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+		</div>
+	</div>
+	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+
+	<div data-role="page" id="safe">
+		<div data-role="header" data-position="fixed">
+			<a href="#main2">이전으로</a>
+			<h1>공지사항</h1>
+		</div>
+		<div data-role="centent">
+			<h3>안녕하세요 고객안심센터 입니다</h3>
+			<p>배달의 민족 안심하고 이용하세요.<br>고객 안심 센터는 배달의민족을 이용하면서 가게와의 갈등이나 부당한 대우로 불편을 겪은 고객님의 문제를 해결해 드립니다.<br>부정,불량식품은 1399로 신고 가능합니다.</p>
+			<hr>
+			<p>24시간 연중 무휴 고객 센터 1600-9880</p>
+			<a href="tel:1600-9880" target="_blank" data-role="button">고객안심센터 연결하기</a>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<a href="#main">홈</a>
+		<a href="#main1">뭐먹지</a>
+		<a href="#main2">MY</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
